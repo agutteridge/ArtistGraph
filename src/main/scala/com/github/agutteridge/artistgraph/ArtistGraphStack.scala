@@ -9,7 +9,7 @@ import collection.mutable
 
 trait ArtistGraphStack extends ScalatraServlet with ScalateSupport {
 
-  notFound {
+  def notFound {
     // remove content type in case it was set through an action
     contentType = null
     // Try to render a ScalateTemplate if no route matched
@@ -18,6 +18,5 @@ trait ArtistGraphStack extends ScalatraServlet with ScalateSupport {
       layoutTemplate(path)
     } orElse serveStaticResource() getOrElse resourceNotFound()
   }
-
 
 }
